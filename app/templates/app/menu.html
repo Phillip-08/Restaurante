@@ -1,0 +1,41 @@
+
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'app/css/emenu.css' %}">
+
+{% load humanize %}
+
+<section class="menu-contenedor">
+    <h2 class="texto-platillos">Platillos</h2>
+    <div class="botones-platillos">
+        {% for c in categoria %}
+        <a class="ensaladas btn btn-verde" herf="#" onclick="listar_producto">Todos</a>
+        <button class="ensaladas btn btn-verde">Ensaladas</button>
+        <button class="pasta btn btn-verde">Nacional</button>
+        <button class="pasta btn btn-verde">Pasta</button>
+        <button class="pizza btn btn-verde">Pizza</button>
+        <button class="postres btn btn-verde">Postres</button>
+        {% endfor%}
+    </div>
+    <div class="platillos">
+        {% for p in productos %}
+        <div class="platillo">
+            {% if p.imagen %}
+            <img src="{{ p.imagen.url}}" alt="Imagen Producto" class="platillos">
+            {% endif %}
+            <h2>{{ p.nombre | title }}</h2>
+            <h4>{{ p.descripcion | capfirst }}</h4>
+            <div class="precio">
+                <h2>${{ p.precio | intcomma }}</h2>
+                <button><i class="fas fa-shopping-basket">reserva</i></button>
+            </div>
+        </div>
+        {% endfor %}
+</section>
+
+{% endblock %}
