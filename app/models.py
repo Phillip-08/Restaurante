@@ -33,6 +33,7 @@ class Producto(models.Model):
     imagen = models.ImageField(upload_to="producto", null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     
+    
 
     def __str__(self):
         return self.nombre

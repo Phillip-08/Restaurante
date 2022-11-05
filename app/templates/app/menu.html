@@ -11,19 +11,15 @@
 {% load humanize %}
 
 <section class="menu-contenedor">
-    <h2 class="texto-platillos">Platillos</h2>
+    <h2 class="texto-platillos">Platillos y Liquidos</h2>
     <div class="botones-platillos">
-        {% for c in categoria %}
-        <a class="ensaladas btn btn-verde" herf="#" onclick="listar_producto">Todos</a>
-        <button class="ensaladas btn btn-verde">Ensaladas</button>
-        <button class="pasta btn btn-verde">Nacional</button>
-        <button class="pasta btn btn-verde">Pasta</button>
-        <button class="pizza btn btn-verde">Pizza</button>
-        <button class="postres btn btn-verde">Postres</button>
-        {% endfor%}
+        <form method="get">
+            {{ producto_filter.form.as_p }}
+            <input type="submit" value="Filtrar">
+        </form>
     </div>
     <div class="platillos">
-        {% for p in productos %}
+        {% for p in producto_filter.qs %}
         <div class="platillo">
             {% if p.imagen %}
             <img src="{{ p.imagen.url}}" alt="Imagen Producto" class="platillos">
@@ -36,6 +32,10 @@
             </div>
         </div>
         {% endfor %}
+
 </section>
+<div>
+    {% include 'app/paginator.html' %}
+</div>  
 
 {% endblock %}

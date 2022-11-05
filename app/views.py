@@ -1,6 +1,6 @@
-from django.shortcuts import render
-
 # Create your views here.
+from django.shortcuts import render
+from .filters import ProductoFilter
 from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
 from .services import get_username
@@ -8,7 +8,7 @@ from .forms import ContactoForm, ProductoForm
 from django.db import connection
 from django.http import Http404
 from django.contrib.auth import authenticate, login
-from .models import Producto
+from .models import Producto, Categoria
 from django.core.paginator import Paginator
 from django.contrib import messages
 from rest_framework import viewsets
@@ -35,12 +35,20 @@ def home(request):
     return render(request, 'app/home.html')
 
 def menu(request):
-    productos = Producto.objects.all().order_by('categoria','nombre')
+    context = {}
+    producto_filter = ProductoFilter(
+        request.GET,
+        queryset= Producto.objects.all().order_by('categoria','nombre')
+    )
+    context['producto_filter'] = producto_filter
     
-    data={
-        'productos': productos
-    }
-    return render(request, 'app/menu.html', data)
+    paginated_producto_filter =Paginator(producto_filter.qs, 6)
+    page_number =request.GET.get('Page')
+    producto_page_obj =paginated_producto_filter.get_page(page_number)
+
+    context['person_page_obj']= producto_page_obj
+    
+    return render(request, 'app/menu.html', context=context)
 
 def registro(request):
 
@@ -138,11 +146,12 @@ def eliminar_producto(request, id):
     messages.success(request, "Eliminado Correctamente")
     return redirect(to="listar_producto")
 
-def listar_categoria(request, id):
-    categoria= categoria
-    
-    
-   
+def filtrar_producto(request):
+      filtrar_postre = Producto.objects.filter('categoria',nombre__contains='Jugo')
+
+      return redirect(to="menu.html")
+
+
 #API
 def hello_user(requests):
     context = {
@@ -157,3 +166,8 @@ def hello_user(requests):
         'name': get_username(params)
     }
     return render(requests, 'hello_user.html', context)
+
+#Ventas
+
+
+#Clientes

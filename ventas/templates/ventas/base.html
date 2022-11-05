@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punto de Venta</title>
+
+  <link rel="icon" type="image/x-icon" href="{% static 'index/img/logo.png' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="{% static 'lib/adminlite/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/jqvmap/jqvmap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/css/adminlte.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'lib/adminlite/plugins/summernote/summernote-bs4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'index/css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'index/DataTables/datatables.min.css' %}">
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'index/DataTables/Buttons-2.0.1/css/buttons.dataTables.min.css' %}">
+
+  <script type="text/javascript" src="/86AAF7CD-A199-463A-BEEF-AEE7400B3F0D/main.js?attr=8BNtjq_IVklCvj83QWV5aaCE0o9vOpneNKQIzF6yQrvMPKfvWI4ZK9-QjFuNbUZ9ruNuiq8o_Xc98Q1sEkCq7EOpLxlX3MQ-ikDKSM6s0_W8W7HU4wYgt738DDYAxiE5w-jH9jXMzdJGrxJSJvD0up8HxOfXY8dLybuSBjue1U47hQ6Q9vOz33R9mvQWNscmGIXi-MYR7xxC-72NGu-_OUpxZdPGOIQNS0C619f4TMU41Zy1A4imgK8Cr8lFyVXPCTuThyTtITMBxFduvI2Kt2eIV-R6Zt5Ex-boy1fm5rZ0C0GLy0qL2qWViFBwP0HNkrE2GUOp9xT32b4Ab0wmLomhhbfL1Phm1BPye73cUWF_52-5hPfGDh0uv6ANBNQ5MU9rDrhPKb8iKs-QrCg9k9q2s5HOEbStQdFck5ze9kVQqbYMtMswR0_Z8-FSuKXgMYVB-LWWCetZEl3HXx45bYykaoBA9ci2gLFrXmMPjMxCsQ-6kuH8GDBI0YOdBxBNt4D3KC-FYXfumhw9YGZaNruk1IvSJgxBnAICakMsMoaCM-VgUs9UeXDx8VMIi_N7TWlSCagvpSj4KPNXWUXF-7MaOI71gygHdH8nw8Nr9pmzBiN3hUf8C-RDxWO7u5nLcZ3FFARO2-eYE3xw4-bpvm4HOB-j-nMAahtmVhZU82Cp54gK57eY1h0sU-AFPJZVplwvdXPbZelf2rJXSDavVrHnnaZ9xhZ0b1_pfRdZ692pc3UmD8e9qg6dHKdnRbuol6yzvySrlHq9GzWU8dw-_UO_U_3dyfdJO1tGsQKoIVa6yCBFYR-s_4SkUOBl2vhAeZ5WWJYmT4K9jd4rP5uT29qi_Xz6YvVk4nVmHKCIGNd3oxJyAvRiVX_2BxW218QLrPCWVmRgRJtymC3pD62ytJBDLZdDowmIfGB9qDRVBW5c1aIm7udg-WP5GJrGj5sqvkZLPXfohp7NnX8lptnCk5W8QDGdnjIqKQm4RRMamETb3np71UTOBNSJKZUbusgXBiqQc7Ycy_YYPfHzKKqexVxjayOwcexvXwuperwVcx8fwmfgTpbyFh0gba1wOME6e_Ma7PwzlLheRr6pzyetTazQ7rHkSwEf2V3ugnIaJYqHzr-6s_Zj5vuM0mt3OYwnWDv1q9Oh2EDU5LZXwOSLeuhdy_and67q4_SegRsAqHHG9ncCoE2EFsCe4A3_62tNehaJgVwvA6SROQyUnFmLRdpf0W5BHBYAwYrJUcbZMuRTbiBeYSzvfU3Kv5B823hfTp1ftLDjcmwOBVw-We5N6jvQZeJQsDb9bJPqgIDWF1rau853kGlJsno_BB7iSXLaRC5jrLLA7ZMfTrfRLoVkEaAH3RzUyxLDzEY3i2wRn0WHrvJvZNfwm46aaCbUQUBa_U6TgF0oU_ECcP0-_8sTNwz2ZhpbhOI8UAbaylvi1kOpfHFj4S9MOIVTun8XG-nqZkvOBS9RXMw5m8I-FOZarrvT8sNeTGQLtrPmZllCKMzdF8P2N6vlSX6a4Jm3frRKyzlfKvN-ckv_s3tXGhNbLSoZrMFPY_BmEgyeV2uvsT9XFZnTx6VDMY4t0nWJg5rQgYJLMyYgXFtnPKppAfanM7qZI0wOsEIYE1PEKW70fAnhhJIIYp4Syxn65F3w1FVZR8eNl_kcIphxGQNPI_lH-UPyj4zLdaRM4yo-5rZ9DhuVOQPndSwCbCDIg1S2LsCY" charset="UTF-8"></script><script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=vx4NxEsen1J5E-KpBUdDGnTm_K5uGlX1Hx9CC4ZVOdGGDrA4LrNohR4FTVSy-E5lWqDXWCpur26ajWPnagqFXT-jCoIJKLYkMVRowXcDXb0XTNkbJTCmXZNU7BFcFSJvJOKJEwMPrfXqMpyI63HEHu-Jb9IQOzPjyNnKTwdDJMa4EwnsOHVFJU6rrgiOYxa5dieTlR97z5c6H2iD60Bx-ZMjuBF7b72kB0rHYiSCd8dJWc-5iSvHKfvDbcgYvLQOJf2Z7XU0k_aOjLKSNjaON6BJEKXuABaceMSmXpwcKOyUUF39tv4GUWd9r_r_V7sKAJ87X12QLXs62jqAem6XEfeRPzzigiIEkMJvVd4G1Y38C1V_EmxyvXixtk6PSeocoYRCVykX6zU2yyPTy9am7AG_04gZ0TwJWUxFZU7QiH75XWVFJI7QcsI-sXkmr-5GoV1xxDjovgKV01NrGtd3JQY0q-OIBAGpzzS3h7xmYw4WJaU0cO_2gEtkxl-aYEnnjModMFzl4lWDA3T4hwzlfgnLzAJXdcKWCO5Xo62VUuR2HMEqo5sBfZY3v21ppIXVYSt192GVNlhA54wKw9uPw6U8HDXOSy4QFWCDY9pbAAYt1iSQX98IfSsLRCOxkcI0qMaL2iCv_0AunvsGMMm3fxNqAx5Cvw4dtVAz_QPh67nRHU_ahlIGwk-NpnqgEYWjNd_rZ4ZQ1yLKFdokFUMZ09nKqBIR8zyv2Zxb3W8lnFSaHxMD5Lj941nhWDHZbeSB16vLEK8XnPH0jF2N0PgmmGluKKVAVNAGaZXZsMcMNTMdFCI3bV7AAJMU46PvJH7wHKbmMLd1ZaLCVbc9paHNB1_BecoShGlizuMo2wTRWul3fAcltvtdL8T8tM3EMVbABGNcZLRY9uRdHRDd1yzDofOBti1oAyZu8tKhxmdK6jXliwuLSGLWshe2U9rgaEj0KRXxrCYTppn4Ar6DSI9QOPF8t9VnGxOdwXE3D1BQon-CQECeuDUEvdXx5Yl9GEHJQIgiyftnXTo8OYGcJ48ZDmsYKwCfd-zc7yiRpFMnufL9WRR2rshGTTz-m987pXT5TJf0DRuuVxrpH66nhPWbFuZ7SpGENRkfOY55QvVL-cCSjekAgLKIdTjOsOpN5PCDYnvSsCHY-hBq5YYewRdwIZkIsoNDph_vMotUmsLi1hdAc2dj6dZefCFh3EiaPOnBa_HsYRquW5IhPYtZo7-Y5mk7YG40Oo04idBr6mnWQX2cefdYxv9wwELTQs2QQf08rwyxQ9AHUYZ5um8PiFPB9jQ4v85Qq2uSEYShbf_TXZ7jazbSYU1hmBYF8LS4Af2_twTRy64FTt5WSJt18Qi0ng-COrb8KOlEI5cxTaNj75_hzfik3jl0gLW5LZmXBuU0Ln529ny8bHiFDFG6yeKHqW2aolUBsdQHWiME8VgZj6sdgY2EMeYN2KPpb4_hRwANHKCuXkMvR1RY54JJm8DPJADG9H5ganw6fVvzyCNcJ3a5AcxpslXaSiTmQTzD2ThnFSVNSKhQPY-b4lZ1evJOZPBcE53DrMeDwNpz6h4dYEID6sf-Nzx8vcILgpT9L38kJ332oPQeL9orP6fkxAONsKQEtgjJwQ5HjNkqY40NqZIw2PxYoQMvcDhQovASGTOFRQyQHS3dyH3CGcBu4zBLCMxwkjaGapaBX1pLGef0LANN12i3XqRog6TdkWdghadt" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kb2MtMDAtYTgtZG9jcy5nb29nbGV1c2VyY29udGVudC5jb20vZG9jcy9zZWN1cmVzYy9mdjBsaHVsbDZvZzBxbDhtc3IxZWdxaTI3OTZsa2c3by9jYXVraG50bW1iMHVvNjJpY3E0NWhoYmsyOThsOHBrYi8xNjY3NTk2MTI1MDAwLzA2MTgxNDUzNjY4MTkxNTIzNTY2LzE4MzYwNDYzNjU2MDE4NjE5NzUxLzE2Ql90T2ZONWpNNFd3dFpmNkY1OXpJLTE4YWRFM1kzcz9lPWRvd25sb2FkJmF4PUFMVzktc0NkUUtMOThtY2NOV2JGZWlhbVpJTDEtYVVpUTF5XzNDakd5NjRpbFg0cU9saU4wY29IOF9nazVzRkk5dkFBNVBTcV8xTVZzNHlIWDF4bDRwLU54ZFZGbExTR2JST0VWTGZDa1QwTnRFbFpSeUJzdHd6cnliUW5ZRURiWE1yTDJTUG5TQjNnUy1zcEVtM0Q4U2h3aW1QZDhmNV9kRVdBLXdwODhsYXFobkctV251Z0F4LUkzWmxUVzQ3MmJVREI4MERTbHItZUs0OTVTcDBIcUIycnZsNE9nYjh5US1EQm9OSzRZa1IwT3N4a3NZNV9DdWp2Z1pmTW1qXzB5UUVIczB2LWJDT3NSXzQ4Q1dfUjNQcDU1LTNfNk5JT0EwX2libzJzdmxGMGx2R0FuelFySjRaUS1HMWhxd1VPQXlXMjNVSWxxS3Q0Yi1yYVFiei14dkY2b01qTE9hVEJrTTJuNFRZRDFDMzN6MDlCYUUyck5QRnhWejhMdnFtSHQwX1QxTXNPRElqRzRmREt6ZDl3ZllROUZWNkVIM1JlVEhZVUJiam1Ib3RzMkpITTk1c3BoRUhZT3hCc2xMcXl4alB6NGkzNWNJSU9iTEQ4eXJ0blFfMlQ3eUZpQlV2a05TY2pPaW5vLXlGeWl0R2Fyd2N4RmNpYS1Bc0tZaF9ST1JNcjdLOG5XNEhpSk01OVNhZURpYjZyUl9EZ0VPdXBhRElDcERvQXRzYTJpYlMtYWphczZHVm5fZ25NZ2JuTWtlQ3dXMzFSVlBJOHhRM195OFhySDMxb19wNE5XUUFaWlU3TTVBcDZ4WU1vU2EyTzBTNUlSMnhVQkRaekh6bHY4Q3N3Q2hjOXNxWXcxcnJZZ1dQbVM3dEVKQTVibF9KejRENmtSSkdTcXo0Q1pSeDdCNWZBRFVIckwzRlh3Q3o1OHE3LUJfRV9FeFQ3djFWbnpzTzdmWGxwWnZVTHpiZ2s3dVRUVHlEc0RXTHZ4Ml8zSWFRc2VtQmVxaTMtNHFHczlpejEtNHMzNEthRzlPTnZHNWJqZjAzblU1Z1NaczFpMlNzaEM0d2JxVmNkVTl4eUJ6T0ZTbXhocy14Mzk2QmVvMXo0VjJhdzdEbVZZTmhiYTNNdmZHVDlwWEtOanppUWx4Mmt0RFMyWGU3Zy1VSE03V1VxTnlUTVZUai1EV3dhSk1KekpBJnV1aWQ9NzA0NzQyNDktZmM5YS00NGIyLTk5MGQtMmVmZjgwYmEyYzc2JmF1dGh1c2VyPTAmbm9uY2U9cmE3NnIwdGdkbW10aSZ1c2VyPTE4MzYwNDYzNjU2MDE4NjE5NzUxJmhhc2g9M2MxbGJicDFrNWgzbmtrdHJpNGNraXEyM2pzc2ZiNTI"/><script type="text/javascript" charset="utf8" src="{% static 'index/js/jquery.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.min.css' %}">
+  <script src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+  <script type="text/javascript" charset="utf8" src="{% static 'index/js/sweet.js' %}"></script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed sidebar-closed sidebar-collapse">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="{% url 'Ventas' %}" class="brand-link">
+        <img src="{% static 'index/img/logo.png' %}" alt="Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Punto Venta</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+            <li class="nav-header">OPCIONES</li>
+            <li class="nav-item">
+              <a href="{% url 'Ventas'%}" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                  Ventas
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-boxes"></i>
+                <p>
+                  Inventario
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-industry"></i>
+                <p>
+                  Compras
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Pedidos
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="nav-icon far fa-circle text-info"></i>
+                    <p>Todos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="nav-icon far fa-circle text-warning"></i>
+                    <p>Para hoy</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p>Atrasados</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-header">EMPRESA</li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class=" nav-icon fas fa-info"></i>
+                <p>Información</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'Clientes' %}" class="nav-link">
+                <i class="nav-icon fas fa-users-cog"></i>
+                <p>Clientes</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">
+                <i class=" nav-icon fas fa-globe"></i>
+                <p>Inicio</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          {% block content %}
+          {% endblock %}
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer text-center text-primary">
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <strong>Restaurante &copy; 
+          XXI
+        </strong>
+      </a>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="{% static 'lib/adminlite/plugins/jquery/jquery.min.js' %}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{% static 'lib/adminlite/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="{% static 'lib/adminlite/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- ChartJS -->
+  <!-- Sparkline -->
+  <script src="{% static 'lib/adminlite/plugins/sparklines/sparkline.js' %}"></script>
+  <!-- JQVMap -->
+  <script src="{% static 'lib/adminlite/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+  <script src="{% static 'lib/adminlite/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="{% static 'lib/adminlite/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+  <!-- daterangepicker -->
+  <script src="{% static 'lib/adminlite/plugins/moment/moment.min.js' %}"></script>
+  <script src="{% static 'lib/adminlite/plugins/daterangepicker/daterangepicker.js' %}"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script
+    src="{% static 'lib/adminlite/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+  <!-- Summernote -->
+  <script src=" {% static 'lib/adminlite/plugins/summernote/summernote-bs4.min.js' %}"></script>
+  <!-- overlayScrollbars -->
+  <script src=" {% static 'lib/adminlite/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+  <!-- AdminLTE App -->
+  <script src="{% static 'lib/adminlite/js/adminlte.js' %}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{% static 'lib/adminlite/js/demo.js' %}"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="{% static 'lib/adminlite/js/pages/dashboard.js' %}"></script>
+  <script src="{% static 'index/DataTables/datatables.min.js' %}"></script>
+  <script src="{% static 'index/DataTables/datatables.min.js' %}"></script>
+  <script src="{% static 'index/DataTables/Buttons-2.0.1/js/dataTables.buttons.min.js' %}"></script>
+  <script src="{% static 'index/DataTables/Buttons-2.0.1/js/buttons.print.min.js' %}"></script>
+  <script src="{% static 'index/DataTables/Buttons-2.0.1/js/buttons.html5.min.js' %}"></script>
+  <script src="{% static 'index/DataTables/Buttons-2.0.1/js/pdfmaker.min.js' %}"></script>
+  <script type="text/javascript" charset="utf8" src="{% static 'index/js/main.js' %}"></script>
+</body>
+
+</html>
