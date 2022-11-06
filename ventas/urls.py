@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import ventas_view, add_cliente_view, edit_cliente_view, delete_cliente_view
+from .views import ventas_view, inventario_view, producto_view
 
 urlpatterns = [
     path('ventas/', ventas_view, name='Ventas'), 
-    path('add_cliente/', add_cliente_view, name='AddCliente'),
-    path('edit_cliente/', edit_cliente_view, name='EditCliente'),
-    path('delete_cliente/', delete_cliente_view, name='DeleteCliente')
+    path('inventario/', inventario_view, name='Inventario'),
+    path('producto/', producto_view, name='Producto'),
+    path('add_producto/', producto_view, name='AddProducto'),
 ]

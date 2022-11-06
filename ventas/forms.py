@@ -1,30 +1,14 @@
 from django import forms
-from clientes.models import Cliente
+from app.models import Producto
 
-class ClienteForm(forms.ModelForm):
+class AddProductoForm(forms.ModelForm):
     class Meta:
-        imagen = forms.ImageField()
-        model = Cliente
-        fields = ('codigo', 'nombre', 'telefono', 'imagen')
+        model = Producto
+        fields = ('nombre', 'precio','descripcion','imagen','categoria')
         labels = {
-            'codigo': 'Código',
-            'telefono': 'Telefono',
-            'imagen': 'Imagen',
-            'nombre': 'Descripcion',
-        }
-
-class EditClienteForms(forms.ModelForm):
-    class Meta:
-        imagen = forms.ImageField()
-        model = Cliente
-        fields = ('codigo', 'nombre', 'telefono', 'imagen')
-        labels = {
-            'codigo': 'Código',
-            'telefono': 'Telefono',
-            'imagen': 'Imagen',
-            'nombre': 'Descripcion',
-        }
-
-        widgets = {
-            
+            'nombre': 'Nombre cliente:',
+            'precio': 'Precio:',
+            'descripcion':'Descripcion del Producto:',
+            'imagen': 'Imagen del Producto:',
+            'categoria': 'Categoria',
         }

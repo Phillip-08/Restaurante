@@ -41,6 +41,7 @@ class Producto(models.Model):
 class Ingrediente(models.Model):
     nombre = models.CharField(max_length=50)
     cantidad = models.IntegerField()
+    costo =models.DecimalField(max_digits=20, decimal_places=2, null=False,)
     imagen = models.ImageField()
 
     def __str__(self):
